@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Estilos para el fondo de la página */
+    body {
+      background-color: #f4f4f4; /* Color de fondo completo con brillo */
+      font-family: Arial, sans-serif; /* Fuente del texto */
+    }
+
+    /* Estilos para el contenedor de la tabla */
+    .table-container {
+      width: 80%; /* Ancho del contenedor de la tabla */
+      margin: 0 auto; /* Centrar el contenedor en la página */
+      background-color: white; /* Color de fondo del contenedor */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra en el contenedor */
+    }
+
+    /* Estilos para la tabla */
+    table {
+      width: 100%; /* Ancho de la tabla al 100% del contenedor */
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #4CAF50; /* Color llamativo para las celdas de encabezado */
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2; /* Color de fondo alternativo para filas pares */
+    }
+
+    /* Estilos para el encabezado */
+    h2 {
+      background-color: #4CAF50; /* Color llamativo para el encabezado de la tabla */
+      color: white;
+      padding: 10px;
+      text-align: center;
+      margin-top: 0; /* Elimina el margen superior predeterminado */
+    }
+
+    /* Estilos para el buscador */
+    .search-box {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    /* Estilos para los bordes redondeados de la tabla */
+    tr:first-child th:first-child {
+      border-top-left-radius: 5px;
+    }
+
+    tr:first-child th:last-child {
+      border-top-right-radius: 5px;
+    }
+
+    tr:last-child td:first-child {
+      border-bottom-left-radius: 5px;
+    }
+
+    tr:last-child td:last-child {
+      border-bottom-right-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="table-container">
+    <h2>Tabla de Datos</h2>
+    <div class="search-box">
+      <input type="text" placeholder="Buscar..." id="searchInput">
+    </div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Número</th>
+      </tr>
+      <tr *ngFor="let item of data">
+        <td>{{ item.id }}</td>
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.apellido }}</td>
+        <td>{{ item.telefono }}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
